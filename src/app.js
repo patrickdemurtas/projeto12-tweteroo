@@ -34,7 +34,8 @@ app.post("/tweets", (request, response) => {
 })
 
 app.get("/tweets", (request, response) => {
-   let lastTen = tweets.slice((tweets.length - 11), tweets.length)
+   let lastTen = tweets.slice(-10)
+   response.send(lastTen)
 })
 
 app.listen(PORT, () => console.log(`teste porta:${PORT}`))
